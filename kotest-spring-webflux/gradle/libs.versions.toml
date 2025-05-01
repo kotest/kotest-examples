@@ -4,7 +4,7 @@ kotest = "5.4.2"
 
 [libraries]
 kotest-runner-junit5 = { module = "io.kotest:kotest-runner-junit5", version.ref = "kotest" }
-kotest-extensions-spring = { module = "io.kotest.extensions:kotest-extensions-spring", version = "1.1.2" }
+kotest-extensions-spring = { module = "io.kotest.extensions:kotest-extensions-spring", version = "1.3.0" }
 springmockk = { module = "com.ninja-squad:springmockk", version = "3.1.1" }
 
 # Versions managed by Spring dependency management, and thus excluded here
