@@ -1,5 +1,5 @@
 [versions]
-kotest = "6.0.0.M8"
+kotest = "6.0.0.M9"
 kotlin = "2.2.0"
 
 [libraries]
