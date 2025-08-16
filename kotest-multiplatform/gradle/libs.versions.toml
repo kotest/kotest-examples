@@ -1,14 +1,17 @@
 [versions]
+agp = "8.7.3"
 kotlin = "2.2.0"
-coroutines = "1.7.1"
-kotest = "6.0.0-LOCAL"
+kotest = "6.0.0.M17"
+ksp = "2.2.0-2.0.2"
+android-compileSdk = "35"
+android-minSdk = "24"
 
 [libraries]
 kotest-assertions-core = { module = "io.kotest:kotest-assertions-core", version.ref = "kotest" }
 kotest-framework-engine = { module = "io.kotest:kotest-framework-engine", version.ref = "kotest" }
 
-kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
-
 [plugins]
+androidLibrary = { id = "com.android.library", version.ref = "agp" }
 kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 kotest = { id = "io.kotest", version.ref = "kotest" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }

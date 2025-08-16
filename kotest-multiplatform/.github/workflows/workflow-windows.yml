@@ -1,0 +1,43 @@
+name: Kotest Windows Targets
+on: [ push ]
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+      - name: jsNodeTest
+        run: .\gradlew.bat jsNodeTest
+        continue-on-error: true
+      - name: jvmKotest
+        run: .\gradlew.bat jvmKotest
+        continue-on-error: true
+      - name: kotestDebugUnitTest
+        run: .\gradlew.bat kotestDebugUnitTest
+        continue-on-error: true
+      - name: kotestReleaseUnitTest
+        run: .\gradlew.bat kotestReleaseUnitTest
+        continue-on-error: true
+      - name: mingwX64Test
+        run: .\gradlew.bat mingwX64Test
+        continue-on-error: true
+      - name: wasmJsNodeTest
+        run: .\gradlew.bat wasmJsNodeKotest
+        continue-on-error: true
+      - name: List reports
+        shell: cmd
+        run: dir shared\build\test-results /s /a
+        if: success() || failure()
+      - name: Kotest Report
+        uses: dorny/test-reporter@v2
+        if: success() || failure()
+        with:
+          name: All Tests
+          path: build/test-results/**/TEST*.xml
+          reporter: java-junit
+          use-actions-summary: true

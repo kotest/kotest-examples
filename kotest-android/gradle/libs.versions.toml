@@ -11,7 +11,7 @@ appcompat = "1.7.1"
 material = "1.12.0"
 mockk = "1.13.17"
 
-kotest = "6.0.0-LOCAL"
+kotest = "6.0.0.M17"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }

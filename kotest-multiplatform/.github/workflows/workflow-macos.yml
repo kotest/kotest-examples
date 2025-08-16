@@ -1,0 +1,76 @@
+name: Kotest Macos Targets
+on: [ push ]
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+      - run: sudo xcodebuild -license accept
+      - run: sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+      - name: iosSimulatorArm64Test
+        run: ./gradlew iosSimulatorArm64Test
+        continue-on-error: true
+      - name: iosX64Test
+        run: ./gradlew iosX64Test
+        continue-on-error: true
+      - name: jsNodeTest
+        run: ./gradlew jsNodeTest
+        continue-on-error: true
+      - name: jvmKotest
+        run: ./gradlew jvmKotest
+        continue-on-error: true
+      - name: kotestDebugUnitTest
+        run: ./gradlew kotestDebugUnitTest
+        continue-on-error: true
+      - name: kotestReleaseUnitTest
+        run: ./gradlew kotestReleaseUnitTest
+        continue-on-error: true
+      - name: macosArm64Test
+        run: ./gradlew macosArm64Test
+        continue-on-error: true
+      - name: macosX64Test
+        run: ./gradlew macosX64Test
+        continue-on-error: true
+      - name: tvosSimulatorArm64Test
+        run: ./gradlew tvosSimulatorArm64Test
+        continue-on-error: true
+      - name: tvosX64Test
+        run: ./gradlew tvosX64Test
+        continue-on-error: true
+      - name: wasmJsNodeTest
+        run: ./gradlew wasmJsNodeTest
+        continue-on-error: true
+      - name: watchosSimulatorArm64Test
+        run: ./gradlew watchosSimulatorArm64Test
+        continue-on-error: true
+      - name: watchosX64Test
+        run: ./gradlew watchosX64Test
+        continue-on-error: true
+      - name: androidNativeX86Test
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 30
+          arch: x86
+          emulator-options: -no-snapshot-save -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
+          script: ./gradlew androidNativeX86Test
+        continue-on-error: true
+
+      - name: Check
+        run: ./gradlew check
+      - name: List reports
+        run: ls -laR shared/build/test-results/
+        if: success() || failure()
+      - name: Kotest Report
+        uses: dorny/test-reporter@v2
+        if: success() || failure()
+        with:
+          name: All Tests
+          path: build/test-results/**/TEST*.xml
+          reporter: java-junit
+          use-actions-summary: true

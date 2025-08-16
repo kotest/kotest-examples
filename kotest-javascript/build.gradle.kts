@@ -1,3 +1,6 @@
+@file:OptIn(ExperimentalWasmDsl::class)
+
+import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
 import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
 
 plugins {
@@ -20,9 +23,20 @@ kotlin {
 
    js {
       nodejs()
+      browser()
+   }
+
+   wasmJs {
+      nodejs()
+      d8()
    }
 
    sourceSets {
+      commonMain {
+         dependencies {
+            api(kotlin("stdlib"))
+         }
+      }
       commonTest {
          dependencies {
             implementation(libs.kotest.assertions.core)
@@ -33,8 +47,18 @@ kotlin {
          dependencies {
             api(kotlin("stdlib-js"))
             implementation(libs.ktor.client.js)
-            // needed as a workaround for https://youtrack.jetbrains.com/issue/KT-57235
+//            just to test npm deps
+            implementation(npm("slugify", "1.6.6"))
+//            needed as a workaround for https://youtrack.jetbrains.com/issue/KT-57235
             implementation("org.jetbrains.kotlin:kotlinx-atomicfu-runtime:2.1.10")
+         }
+      }
+      wasmJsMain {
+         dependencies {
+            api(kotlin("stdlib-wasm-js"))
+            implementation(libs.ktor.client.js)
+            // just to test npm deps
+            implementation(npm("slugify", "1.6.6"))
          }
       }
    }

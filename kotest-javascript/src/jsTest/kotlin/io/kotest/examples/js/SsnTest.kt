@@ -27,4 +27,8 @@ class SsnTest : FunSpec({
       validateSocial("") shouldBe false
    }
 
+   test("this test should fail") {
+      1 shouldBe 2
+   }
+
 })
