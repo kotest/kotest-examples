@@ -4,7 +4,6 @@ import org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpackConfig
 
 plugins {
    alias(libs.plugins.kotlin.multiplatform)
-   alias(libs.plugins.androidLibrary)
    alias(libs.plugins.kotest)
    alias(libs.plugins.ksp)
 }
@@ -16,9 +15,6 @@ kotlin {
       languageVersion = KotlinVersion.KOTLIN_2_2
       verbose = true
    }
-
-   // for android tests, use the `kotestDebugUnitTest` or `kotestReleaseUnitTest` tasks
-   androidTarget()
 
    jvm()
    js {
@@ -77,17 +73,5 @@ kotlin {
             implementation(libs.kotest.assertions.core)
          }
       }
-   }
-}
-
-android {
-   namespace = "io.kotest.test.shared"
-   compileSdk = libs.versions.android.compileSdk.get().toInt()
-   compileOptions {
-      sourceCompatibility = JavaVersion.VERSION_11
-      targetCompatibility = JavaVersion.VERSION_11
-   }
-   defaultConfig {
-      minSdk = libs.versions.android.minSdk.get().toInt()
    }
 }
