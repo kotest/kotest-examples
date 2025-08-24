@@ -3,12 +3,7 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
 plugins {
    alias(libs.plugins.kotlin.multiplatform)
    alias(libs.plugins.kotest)
-   id("com.google.devtools.ksp") version "2.2.0-2.0.2"
-}
-
-repositories {
-   mavenCentral()
-   mavenLocal()
+   alias(libs.plugins.ksp)
 }
 
 kotlin {
@@ -18,9 +13,9 @@ kotlin {
    }
 
    linuxX64()
-//   mingwX64()
-//   macosX64()
-//   iosX64()
+   mingwX64()
+   macosX64()
+   iosX64()
 
    sourceSets {
       nativeTest {
