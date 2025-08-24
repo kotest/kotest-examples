@@ -32,6 +32,10 @@ android {
    }
 }
 
+tasks.withType<AbstractTestTask>().configureEach {
+   failOnNoDiscoveredTests = false
+}
+
 dependencies {
    implementation(project(":shared"))
 
@@ -45,6 +49,7 @@ dependencies {
    testImplementation(libs.kotlin.reflect)
    testImplementation(libs.kotest.framework)
    testImplementation(libs.kotest.assertions)
+   testImplementation(libs.kotest.runner.junit5)
    testImplementation(libs.mockk.android)
    testImplementation(libs.mockk.agent)
 

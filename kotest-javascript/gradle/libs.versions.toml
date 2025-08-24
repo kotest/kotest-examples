@@ -1,7 +1,8 @@
 [versions]
-kotlin = "2.2.0"
+kotlin = "2.2.10"
 kotest = "6.0.0"
 ktor = "3.0.1"
+ksp = "2.2.10-2.0.2"
 
 [libraries]
 kotest-assertions-core = { module = "io.kotest:kotest-assertions-core", version.ref = "kotest" }
@@ -12,3 +13,4 @@ ktor-client-js = { module = "io.ktor:ktor-client-js", version.ref = "ktor" }
 [plugins]
 kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 kotest = { id = "io.kotest", version.ref = "kotest" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }

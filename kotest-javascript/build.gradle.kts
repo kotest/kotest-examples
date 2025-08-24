@@ -6,12 +6,7 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
 plugins {
    alias(libs.plugins.kotlin.multiplatform)
    alias(libs.plugins.kotest)
-   id("com.google.devtools.ksp") version "2.2.0-2.0.2"
-}
-
-repositories {
-   mavenLocal()
-   mavenCentral()
+   alias(libs.plugins.ksp)
 }
 
 kotlin {
@@ -27,6 +22,7 @@ kotlin {
    }
 
    wasmJs {
+      browser()
       nodejs()
       d8()
    }
@@ -47,17 +43,20 @@ kotlin {
          dependencies {
             api(kotlin("stdlib-js"))
             implementation(libs.ktor.client.js)
-//            just to test npm deps
+
+            // to test npm deps
             implementation(npm("slugify", "1.6.6"))
-//            needed as a workaround for https://youtrack.jetbrains.com/issue/KT-57235
-            implementation("org.jetbrains.kotlin:kotlinx-atomicfu-runtime:2.1.10")
+
+            // needed as a workaround for https://youtrack.jetbrains.com/issue/KT-57235
+            implementation("org.jetbrains.kotlin:kotlinx-atomicfu-runtime:2.2.10")
          }
       }
       wasmJsMain {
          dependencies {
             api(kotlin("stdlib-wasm-js"))
             implementation(libs.ktor.client.js)
-            // just to test npm deps
+
+            // to test npm deps
             implementation(npm("slugify", "1.6.6"))
          }
       }

@@ -1,1 +1,3 @@
 .kotlin
+yarn.lock
+java_pid*.hprof
