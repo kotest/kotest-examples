@@ -17,10 +17,10 @@ kotlin {
    }
 
    jvm()
-//   js {
-//      browser()
-//      nodejs()
-//   }
+   js {
+      browser()
+      nodejs()
+   }
 
    @OptIn(ExperimentalWasmDsl::class)
    wasmJs {
@@ -66,7 +66,6 @@ kotlin {
    androidNativeArm64()
 
    sourceSets {
-
       commonTest {
          dependencies {
             implementation(libs.kotest.framework.engine)
@@ -75,3 +74,11 @@ kotlin {
       }
    }
 }
+
+tasks.named<Test>("test") {
+   useJUnitPlatform()
+   filter {
+      isFailOnNoMatchingTests = false
+   }
+}
+
