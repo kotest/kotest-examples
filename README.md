@@ -11,3 +11,4 @@ This repo contains multiple examples of how to use Kotest.
 * [Spring Webflux](./kotest-spring-webflux)  &mdash; example of a JVM project using Spring Webflux
 * [Allure](./kotest-allure)  &mdash; example of a JVM project using Allure test reporting
 * [WasmJS](./kotest-wasm)  &mdash; example of a WasmJS project
+* [Android](./kotest-android)  &mdash; example of an Android project
