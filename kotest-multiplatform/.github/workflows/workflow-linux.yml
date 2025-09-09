@@ -22,18 +22,18 @@ jobs:
 #          sudo apt-get install --no-install-recommends -y qemu-user-static binfmt-support
 #          sudo update-binfmt --enable qemu-aarch64
 #        continue-on-error: true
-      - name: jsNodeTest
-        run: ./gradlew jsNodeTest
+#      - name: jsNodeTest
+#        run: ./gradlew jsNodeTest
+#        continue-on-error: true
+      - name: jvmKotest
+        run: ./gradlew jvmKotest
         continue-on-error: true
-#      - name: jvmKotest
-#        run: ./gradlew jvmKotest
-#        continue-on-error: true
-#      - name: kotestDebugUnitTest
-#        run: ./gradlew kotestDebugUnitTest
-#        continue-on-error: true
-#      - name: kotestReleaseUnitTest
-#        run: ./gradlew kotestReleaseUnitTest
-#        continue-on-error: true
+      - name: kotestDebugUnitTest
+        run: ./gradlew kotestDebugUnitTest
+        continue-on-error: true
+      - name: kotestReleaseUnitTest
+        run: ./gradlew kotestReleaseUnitTest
+        continue-on-error: true
 #      - name: linuxArm64Test
 #        run: ./gradlew linuxArm64Test
 #        continue-on-error: true
