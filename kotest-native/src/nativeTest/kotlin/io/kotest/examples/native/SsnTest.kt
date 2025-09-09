@@ -2,7 +2,6 @@ package io.kotest.examples.native
 
 import io.kotest.core.spec.style.FunSpec
 import io.kotest.matchers.shouldBe
-import kotlinx.coroutines.delay
 
 class SsnTest : FunSpec() {
    init {
@@ -18,7 +17,6 @@ class SsnTest : FunSpec() {
       }
 
       test("ssn should be in the accepted format") {
-         delay(22)
          validateSocial("") shouldBe false
          validateSocial("123-45-678") shouldBe false
          validateSocial("12-45-6789") shouldBe false
