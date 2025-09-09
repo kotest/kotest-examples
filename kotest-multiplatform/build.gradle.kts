@@ -75,10 +75,9 @@ kotlin {
    }
 }
 
-tasks.named<Test>("test") {
+tasks.named<Test>("jvmTest") {
    useJUnitPlatform()
    filter {
       isFailOnNoMatchingTests = false
    }
 }
-
