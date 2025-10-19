@@ -1,4 +1,5 @@
 import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
+import org.jetbrains.kotlin.gradle.tasks.KotlinTest
 
 plugins {
    alias(libs.plugins.kotlin.multiplatform)
@@ -25,4 +26,9 @@ kotlin {
          }
       }
    }
+
+   tasks.withType<KotlinTest>().configureEach {
+      failOnNoDiscoveredTests = false
+   }
 }
+
