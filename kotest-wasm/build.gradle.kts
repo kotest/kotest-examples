@@ -6,7 +6,7 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
 plugins {
    alias(libs.plugins.kotlin.multiplatform)
    alias(libs.plugins.kotest)
-   id("com.google.devtools.ksp") version "2.2.0-2.0.2"
+   id("com.google.devtools.ksp") version "2.2.21-2.0.4"
 }
 
 repositories {
@@ -21,22 +21,27 @@ kotlin {
       languageVersion = KotlinVersion.KOTLIN_2_2
    }
 
-//   wasmJs {
+   wasmJs {
+      binaries.executable()
+      browser()
+//      nodejs()
+   }
+
+//   wasmWasi {
 //      binaries.executable()
 //      nodejs()
 //   }
 
-   wasmWasi {
-      binaries.executable()
-      nodejs()
-   }
-
    sourceSets {
-      wasmWasiTest {
+      commonTest {
          dependencies {
-//            implementation(libs.kotest.assertions.core)
+            implementation(libs.kotest.assertions.core)
             implementation(libs.kotest.framework.engine)
          }
       }
    }
+}
+
+tasks.withType<AbstractTestTask>().configureEach {
+   failOnNoDiscoveredTests = false
 }
