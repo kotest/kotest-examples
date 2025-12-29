@@ -9,11 +9,6 @@ plugins {
    id("com.google.devtools.ksp") version "2.2.21-2.0.4"
 }
 
-repositories {
-   mavenCentral()
-   mavenLocal()
-}
-
 kotlin {
 
    compilerOptions {
@@ -24,13 +19,14 @@ kotlin {
    wasmJs {
       binaries.executable()
       browser()
-//      nodejs()
+      nodejs()
+      d8()
    }
 
-//   wasmWasi {
-//      binaries.executable()
-//      nodejs()
-//   }
+   wasmWasi {
+      binaries.executable()
+      nodejs()
+   }
 
    sourceSets {
       commonTest {

@@ -1,3 +1,5 @@
+@file:Suppress("UnstableApiUsage")
+
 rootProject.name = "kotest-wasm"
 
 pluginManagement {
@@ -6,5 +8,12 @@ pluginManagement {
          gradlePluginPortal()
          mavenLocal()
       }
+   }
+}
+
+dependencyResolutionManagement {
+   repositories {
+      mavenCentral()
+      mavenLocal()
    }
 }
