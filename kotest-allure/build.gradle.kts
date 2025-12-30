@@ -3,7 +3,7 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
 
 plugins {
    kotlin("jvm") version "2.2.10"
-   id("io.qameta.allure") version "2.12.0"
+   id("io.qameta.allure") version "3.0.1"
 }
 
 group = "io.kotest.examples"
