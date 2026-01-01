@@ -1,5 +1,5 @@
 [versions]
-kotest = "6.1.0-LOCAL"
+kotest = "6.1.0.2267-SNAPSHOT"
 kotlin = "2.2.21"
 
 [libraries]
