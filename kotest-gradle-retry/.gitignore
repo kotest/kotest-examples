@@ -1,0 +1,41 @@
+*.class
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+.allure
+
+*.iml
+.idea
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+out/
+
+build
+target
+.gradle
+
+allure-results/
+
+# Gradle wrapper
+!gradle/wrapper/gradle-wrapper.jar
+
+allure.log
+kotest.log
+kotest-tests-junit-report.log
+kotest-tests-core.log
+
+local.properties
+.kotest
+/kotest-examples/kotest-examples-javascript/node_modules/
+*.gpg.enc
+
+kotest-tests/kotest-tests-js/node_modules/
+.DS_Store
+.kotlin

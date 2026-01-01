@@ -15,5 +15,9 @@ class BitstringTest : DescribeSpec() {
             bitstring(listOf())
          }
       }
+      it("parse googlecom query") {
+      }
+      it("parse google.com query") {
+      }
    }
 }
