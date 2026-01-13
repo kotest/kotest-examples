@@ -9,7 +9,7 @@ junitVersion = "1.2.1"
 espressoCore = "3.7.0"
 appcompat = "1.7.1"
 material = "1.13.0"
-mockk = "1.13.17"
+mockk = "1.14.7"
 kotest = "6.0.4"
 
 [libraries]
