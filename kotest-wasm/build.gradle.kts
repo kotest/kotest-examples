@@ -6,7 +6,7 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
 plugins {
    alias(libs.plugins.kotlin.multiplatform)
    alias(libs.plugins.kotest)
-   id("com.google.devtools.ksp") version "2.2.21-2.0.4"
+   id("com.google.devtools.ksp") version "2.3.4"
 }
 
 kotlin {
