@@ -27,7 +27,7 @@ dependencies {
    implementation(kotlin("stdlib"))
    implementation(kotlin("reflect"))
    testImplementation("io.kotest:kotest-extensions-allure:6.0.4")
-   testImplementation("io.kotest:kotest-runner-junit5:6.0.4")
+   testImplementation("io.kotest:kotest-runner-junit5:6.0.7")
 }
 
 tasks.withType<Test> {
