@@ -8,7 +8,7 @@ import kotlin.random.Random
  */
 class FlakyTest : FunSpec({
    test("will fail randomly") {
-      if (Random.nextInt(0, 10) < 9)
+      if (Random.nextInt(0, 5) < 4)
          error("boom")
    }
 })
