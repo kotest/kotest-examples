@@ -5,7 +5,7 @@ kotest = "6.0.4"
 [libraries]
 kotest-runner-junit5 = { module = "io.kotest:kotest-runner-junit5", version.ref = "kotest" }
 kotest-extensions-spring = { module = "io.kotest:kotest-extensions-spring", version.ref = "kotest" }
-springmockk = { module = "com.ninja-squad:springmockk", version = "4.0.2" }
+springmockk = { module = "com.ninja-squad:springmockk", version = "5.0.1" }
 
 # Versions managed by Spring dependency management and thus excluded here
 kotlinx-coroutines-reactor = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-reactor" }
