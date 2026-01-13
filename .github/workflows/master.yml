@@ -10,7 +10,14 @@ on:
     branches:
       - master
   pull_request:
+  
+# This will prevent multiple parallel runs, and will cancel queued runs except the latest one.
+concurrency:
+   group: 'master-ci'
+   cancel-in-progress: true
 
+permissions:
+   contents: read
 jobs:
   linux:
     strategy:
