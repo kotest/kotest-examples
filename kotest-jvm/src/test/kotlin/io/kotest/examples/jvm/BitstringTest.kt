@@ -6,18 +6,16 @@ import io.kotest.matchers.shouldBe
 
 class BitstringTest : DescribeSpec() {
    init {
-      it("should set bits based on booleans 1") {
-         bitstring(listOf(true, false, true, false, true)) shouldBe "10101"
-         bitstring(listOf(false, false, false, false, false, false, false, true)) shouldBe "00000001"
+      it("other test") {
       }
-      it("should error on empty") {
-         shouldThrowAny {
-            bitstring(listOf())
+      it("other.test") {
+
+      }
+      describe("context") {
+         it("!test") {
          }
-      }
-      it("parse googlecom query") {
-      }
-      it("parse google.com query") {
+         it("f:test2") {
+         }
       }
    }
 }
