@@ -1,5 +1,4 @@
 import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
-import org.jetbrains.kotlin.gradle.tasks.KotlinTest
 
 plugins {
    alias(libs.plugins.kotlin.multiplatform)
@@ -16,8 +15,8 @@ kotlin {
 
    linuxX64()
    mingwX64()
-//   macosX64()
-//   iosX64()
+   macosX64()
+   iosX64()
 
    sourceSets {
       commonTest {
@@ -28,8 +27,4 @@ kotlin {
          }
       }
    }
-}
-
-kotest {
-   customGradleTask = false
 }
