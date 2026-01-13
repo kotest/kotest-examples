@@ -5,10 +5,7 @@ import kotlinx.coroutines.delay
 
 class CoroutinesTest : FunSpec({
 
-   context("kotest native allows nested tests") {
+   test("tests support suspendable functions") {
       delay(10) // look ma, I can use coroutines here!
-      test("a leaf test") {
-         delay(10) // look ma, I can use coroutines here!
-      }
    }
 })

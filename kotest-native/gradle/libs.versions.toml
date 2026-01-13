@@ -1,5 +1,5 @@
 [versions]
-kotest = "6.1.0-LOCAL"
+kotest = "6.1.0-RC1"
 kotlin = "2.2.21"
 ksp = "2.2.21-2.0.4"
 

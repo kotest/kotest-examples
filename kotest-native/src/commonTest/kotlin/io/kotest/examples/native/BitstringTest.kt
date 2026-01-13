@@ -12,9 +12,9 @@ class BitstringTest : DescribeSpec() {
             bitstring(listOf(false, false, false, false, false, false, false, true)) shouldBe "00000001"
          }
          it("should error on empty") {
-            shouldThrowAny {
-               bitstring(listOf())
-            }
+           shouldThrowAny {
+             bitstring(listOf())
+           }
          }
       }
    }
