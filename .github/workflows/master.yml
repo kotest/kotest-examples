@@ -14,7 +14,7 @@ on:
 # This will prevent multiple parallel runs, and will cancel queued runs except the latest one.
 concurrency:
    group: 'master-ci'
-   cancel-in-progress: true
+   cancel-in-progress: false
 
 permissions:
    contents: read
