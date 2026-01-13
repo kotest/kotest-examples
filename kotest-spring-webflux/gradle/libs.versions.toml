@@ -1,6 +1,6 @@
 [versions]
-kotlin = "2.2.10"
-kotest = "6.0.4"
+kotlin = "2.2.21"
+kotest = "6.1.0-RC2"
 
 [libraries]
 kotest-runner-junit5 = { module = "io.kotest:kotest-runner-junit5", version.ref = "kotest" }
