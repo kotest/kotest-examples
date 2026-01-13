@@ -1,4 +1,4 @@
-package io.kotest.examples.js.ssn
+package io.kotest.examples.wasmjs
 
 import io.kotest.core.spec.style.FunSpec
 import io.kotest.matchers.shouldBe
