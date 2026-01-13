@@ -1,4 +1,4 @@
-package io.kotest.examples.wasm
+package io.kotest.examples.wasmjs
 
 /**
  * This function returns true if a social security number is in the form ddd-dd-dddd.

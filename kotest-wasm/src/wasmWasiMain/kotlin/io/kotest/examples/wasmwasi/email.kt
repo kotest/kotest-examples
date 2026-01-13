@@ -1,4 +1,4 @@
-package io.kotest.examples.wasm
+package io.kotest.examples.wasmwasi
 
 /**
  * Extremely basic email validator, not intended to do anything complicated, is just for demo purposes.
