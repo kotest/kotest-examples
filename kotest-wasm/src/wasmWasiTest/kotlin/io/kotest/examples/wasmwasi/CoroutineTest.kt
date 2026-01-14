@@ -1,7 +1,6 @@
 package io.kotest.examples.wasmwasi
 
 import io.kotest.core.spec.style.FreeSpec
-import io.kotest.core.spec.style.scopes.FreeSpecRootScope.invoke
 import io.kotest.matchers.comparables.shouldBeGreaterThan
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
