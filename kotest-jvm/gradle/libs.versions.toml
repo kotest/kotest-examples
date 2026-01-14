@@ -1,5 +1,5 @@
 [versions]
-kotest = "6.1.0-RC2"
+kotest = "6.1.0-RC3"
 kotlin = "2.2.21"
 
 [libraries]
