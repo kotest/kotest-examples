@@ -37,6 +37,7 @@ dependencies {
    testImplementation(libs.kotest.runner.junit5)
    testImplementation(libs.kotest.extensions.spring)
    testImplementation(libs.reactor.test)
+   testImplementation(libs.spring.boot.webtestclient)
    testImplementation(libs.spring.boot.starter.test) {
       exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
       exclude(module = "mockito-core")
