@@ -32,7 +32,6 @@ jobs:
           - kotest-native
           - kotest-spring-webflux
           - kotest-wasm
-          - kotest-gradle-retry
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the repo
