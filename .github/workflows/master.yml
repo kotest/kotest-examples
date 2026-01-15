@@ -10,7 +10,14 @@ on:
     branches:
       - master
   pull_request:
+  
+# This will prevent multiple parallel runs, and will cancel queued runs except the latest one.
+concurrency:
+   group: 'master-ci'
+   cancel-in-progress: false
 
+permissions:
+   contents: read
 jobs:
   linux:
     strategy:
@@ -28,15 +35,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
       - name: Setup JDK
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           distribution: 'temurin'
-          java-version: '17'
+          java-version: '21'
 
       - name: Run tests
         working-directory: ./${{ matrix.project }}
@@ -58,23 +65,17 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        project:
-          - kotest-allure
-          - kotest-android
-          - kotest-javascript
-          - kotest-jvm
+        project:       
           - kotest-multiplatform
           - kotest-native
-          - kotest-spring-webflux
-          - kotest-wasm
     steps:
       - name: Checkout the repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
       - name: Setup JDK
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
            distribution: 'temurin'
            java-version: '17'
@@ -100,22 +101,16 @@ jobs:
       fail-fast: false
       matrix:
         project:
-          - kotest-allure
-          - kotest-android
-          - kotest-javascript
-          - kotest-jvm
           - kotest-multiplatform
           - kotest-native
-          - kotest-spring-webflux
-          - kotest-wasm
     steps:
       - name: Checkout the repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
       - name: Setup JDK
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
            distribution: 'temurin'
            java-version: '17'

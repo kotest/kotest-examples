@@ -3,7 +3,7 @@ package io.kotest.examples.common
 import io.kotest.core.spec.style.ShouldSpec
 import io.kotest.matchers.shouldBe
 
-class `00IgnoredTests` : ShouldSpec() {
+class IgnoredTests : ShouldSpec() {
    init {
       xshould("ignored by x method") {
          1 shouldBe 2

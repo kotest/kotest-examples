@@ -5,10 +5,10 @@ import io.kotest.core.config.AbstractProjectConfig
 class ProjectConfig : AbstractProjectConfig() {
 
    override suspend fun beforeProject() {
-      println("HELLO!")
+      println("beforeProject!")
    }
 
    override suspend fun afterProject() {
-      println("GOODBYE!")
+      println("afterProject!")
    }
 }

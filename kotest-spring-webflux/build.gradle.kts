@@ -2,7 +2,7 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
 
 plugins {
-   id("org.springframework.boot") version "3.5.5"
+   id("org.springframework.boot") version "4.0.1"
    alias(libs.plugins.kotlin.jvm)
    alias(libs.plugins.kotlin.plugin.spring)
 }
@@ -37,6 +37,7 @@ dependencies {
    testImplementation(libs.kotest.runner.junit5)
    testImplementation(libs.kotest.extensions.spring)
    testImplementation(libs.reactor.test)
+   testImplementation(libs.spring.boot.webtestclient)
    testImplementation(libs.spring.boot.starter.test) {
       exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
       exclude(module = "mockito-core")

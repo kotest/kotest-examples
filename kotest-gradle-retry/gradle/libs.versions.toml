@@ -1,5 +1,5 @@
 [versions]
-kotest = "6.1.0-LOCAL"
+kotest = "6.1.0-RC2"
 kotlin = "2.2.21"
 
 [libraries]
@@ -10,3 +10,4 @@ kotest-runner-junit5 = { module = "io.kotest:kotest-runner-junit5", version.ref 
 [plugins]
 kotlin = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kotest = { id = "io.kotest", version.ref = "kotest" }
+retry = { id = "org.gradle.test-retry", version = "1.6.4" }

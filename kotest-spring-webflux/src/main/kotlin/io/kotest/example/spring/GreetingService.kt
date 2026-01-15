@@ -9,3 +9,5 @@ class GreetingService {
       return Mono.just(Greeting("Welcome $name"))
    }
 }
+
+data class Greeting(val message: String)

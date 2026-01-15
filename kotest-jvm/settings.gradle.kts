@@ -1,3 +1,5 @@
+@file:Suppress("UnstableApiUsage")
+
 pluginManagement {
    repositories {
       gradlePluginPortal()
@@ -14,5 +16,12 @@ dependencyResolutionManagement {
       mavenCentral()
       mavenLocal()
       maven("https://central.sonatype.com/repository/maven-snapshots")
+   }
+}
+
+dependencyResolutionManagement {
+   repositories {
+      mavenCentral()
+      mavenLocal()
    }
 }

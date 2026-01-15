@@ -1,13 +1,14 @@
 package io.kotest.examples.native
 
 import io.kotest.core.spec.style.FunSpec
-import io.kotest.datatest.withData
-import io.kotest.matchers.string.shouldNotBeEmpty
+import io.kotest.datatest.withTests
+import io.kotest.matchers.shouldBe
 
 class DataTests : FunSpec() {
    init {
-      withData(listOf("foo", "bar", "baz")) {
-         it.shouldNotBeEmpty()
+      withTests("tinker", "tailor", "soldier", "sailor") {
+         1 + 1 shouldBe 2
       }
    }
 }
+

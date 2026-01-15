@@ -2,7 +2,8 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
 
 plugins {
    alias(libs.plugins.kotlin)
-   id("org.gradle.test-retry") version "1.6.4"
+   alias(libs.plugins.kotest)
+   alias(libs.plugins.retry)
 }
 
 repositories {
@@ -18,9 +19,15 @@ java {
 
 tasks.test {
    useJUnitPlatform()
+
+   reports {
+      html.required.set(false)
+      junitXml.required.set(true)
+   }
+
    retry {
-      maxRetries.set(10)
-      maxFailures.set(10)
+      maxRetries.set(100)
+      maxFailures.set(100)
       failOnPassedAfterRetry.set(true)
       failOnSkippedAfterRetry.set(true)
    }

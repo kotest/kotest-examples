@@ -1,5 +1,4 @@
 import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
-import org.jetbrains.kotlin.gradle.tasks.KotlinTest
 
 plugins {
    alias(libs.plugins.kotlin.multiplatform)
@@ -8,6 +7,7 @@ plugins {
 }
 
 kotlin {
+
    compilerOptions {
       languageVersion = KotlinVersion.KOTLIN_2_2
       apiVersion = KotlinVersion.KOTLIN_2_2
@@ -19,16 +19,12 @@ kotlin {
    iosX64()
 
    sourceSets {
-      nativeTest {
+      commonTest {
          dependencies {
             implementation(libs.kotest.framework.engine)
             implementation(libs.kotest.assertions.core)
+            implementation(kotlin("test"))
          }
       }
    }
-
-   tasks.withType<KotlinTest>().configureEach {
-      failOnNoDiscoveredTests = false
-   }
 }
-

@@ -1,11 +1,11 @@
 [versions]
-kotlin = "2.2.10"
-kotest = "6.0.4"
+kotlin = "2.2.21"
+kotest = "6.1.0-RC3"
 
 [libraries]
 kotest-runner-junit5 = { module = "io.kotest:kotest-runner-junit5", version.ref = "kotest" }
 kotest-extensions-spring = { module = "io.kotest:kotest-extensions-spring", version.ref = "kotest" }
-springmockk = { module = "com.ninja-squad:springmockk", version = "4.0.2" }
+springmockk = { module = "com.ninja-squad:springmockk", version = "5.0.1" }
 
 # Versions managed by Spring dependency management and thus excluded here
 kotlinx-coroutines-reactor = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-reactor" }
@@ -14,6 +14,7 @@ reactor-test = { module = "io.projectreactor:reactor-test" }
 
 spring-boot-starter-webflux = { module = "org.springframework.boot:spring-boot-starter-webflux" }
 spring-boot-starter-test = { module = "org.springframework.boot:spring-boot-starter-test" }
+spring-boot-webtestclient = { module = "org.springframework.boot:spring-boot-webtestclient" }
 jackson-module-kotlin = { module = "com.fasterxml.jackson.module:jackson-module-kotlin" }
 
 [plugins]
