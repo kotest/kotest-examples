@@ -10,8 +10,12 @@ pluginManagement {
       mavenCentral()
       mavenLocal()
       gradlePluginPortal()
+      maven("https://central.sonatype.com/repository/maven-snapshots")
    }
 }
+
+apply(from = "../kotest-plugin-override.settings.gradle.kts")
+apply(from = "../kotest-version-override.settings.gradle.kts")
 
 dependencyResolutionManagement {
    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
@@ -19,6 +23,7 @@ dependencyResolutionManagement {
       google()
       mavenCentral()
       mavenLocal()
+      maven("https://central.sonatype.com/repository/maven-snapshots")
    }
 }
 

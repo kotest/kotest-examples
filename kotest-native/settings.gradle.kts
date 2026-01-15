@@ -6,6 +6,9 @@ pluginManagement {
    }
 }
 
+apply(from = "../kotest-plugin-override.settings.gradle.kts")
+apply(from = "../kotest-version-override.settings.gradle.kts")
+
 dependencyResolutionManagement {
    repositories {
       mavenLocal()

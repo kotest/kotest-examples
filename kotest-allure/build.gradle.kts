@@ -2,8 +2,8 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
 
 plugins {
-   kotlin("jvm") version "2.2.10"
-   id("io.qameta.allure") version "2.12.0"
+   alias(libs.plugins.kotlin.jvm)
+   alias(libs.plugins.allure)
 }
 
 group = "io.kotest.examples"
@@ -26,8 +26,8 @@ kotlin {
 dependencies {
    implementation(kotlin("stdlib"))
    implementation(kotlin("reflect"))
-   testImplementation("io.kotest:kotest-extensions-allure:6.0.4")
-   testImplementation("io.kotest:kotest-runner-junit5:6.0.4")
+   testImplementation(libs.kotest.extensions.allure)
+   testImplementation(libs.kotest.runner.junit5)
 }
 
 tasks.withType<Test> {
@@ -41,5 +41,5 @@ tasks.withType<Test> {
 
 allure {
    adapter.autoconfigure.set(false)
-   version.set("2.29.1")
+   version.set(libs.versions.allure.report.get())
 }
