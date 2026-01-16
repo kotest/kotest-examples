@@ -1,7 +1,7 @@
 /**
  * Shared Kotest library version override.
  *
- * Overrides the kotest version in libs.versions.toml when KOTEST_VERSION env var is set.
+ * Overrides the kotest version for libraries only in libs.versions.toml when KOTEST_VERSION env var is set.
  * Apply after the pluginManagement block (and after kotest-plugin-override if using both):
  *
  *   pluginManagement {

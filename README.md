@@ -16,13 +16,28 @@ This repo contains multiple examples of how to use Kotest.
 
 ## Overriding Kotest Version
 
-All modules support overriding the Kotest version via the `KOTEST_VERSION` environment variable. 
+All modules support overriding the Kotest version via environment variables.
 This is useful for CI workflows that need to test against a specific or newly-built Kotest version.
 
+### Environment Variables
+
+| Variable | Description |
+|----------|-------------|
+| `KOTEST_VERSION` | Overrides the Kotest library dependencies version |
+| `KOTEST_GRADLE_PLUGIN_VERSION` | Overrides the io.kotest Gradle plugin version |
+
+### Examples
+
 ```bash
-# Run tests with a specific Kotest version
+# Run tests with a specific Kotest library version
 cd kotest-jvm
 KOTEST_VERSION=6.0.3 ./gradlew test
+
+# Run tests with a specific Gradle plugin version
+KOTEST_GRADLE_PLUGIN_VERSION=6.0.3 ./gradlew test
+
+# Override both library and plugin versions (useful when they differ)
+KOTEST_VERSION=6.1.0 KOTEST_GRADLE_PLUGIN_VERSION=6.0.3 ./gradlew test
 
 # Or for any other module
 cd kotest-multiplatform
