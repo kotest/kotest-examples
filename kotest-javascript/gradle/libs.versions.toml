@@ -1,6 +1,7 @@
 [versions]
 kotlin = "2.2.21"
 kotest = "6.1.0-RC3"
+kotest-plugin = "6.1.0-RC3"
 ktor = "3.3.3"
 ksp = "2.3.4"
 
@@ -12,5 +13,5 @@ ktor-client-js = { module = "io.ktor:ktor-client-js", version.ref = "ktor" }
 
 [plugins]
 kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
-kotest = { id = "io.kotest", version.ref = "kotest" }
+kotest = { id = "io.kotest", version.ref = "kotest-plugin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }

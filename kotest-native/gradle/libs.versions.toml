@@ -1,5 +1,6 @@
 [versions]
 kotest = "6.1.0-RC4"
+kotest-plugin = "6.1.0-RC4"
 kotlin = "2.2.21"
 ksp = "2.3.4"
 
@@ -9,5 +10,5 @@ kotest-assertions-core = { module = "io.kotest:kotest-assertions-core", version.
 
 [plugins]
 kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
-kotest = { id = "io.kotest", version.ref = "kotest" }
+kotest = { id = "io.kotest", version.ref = "kotest-plugin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
