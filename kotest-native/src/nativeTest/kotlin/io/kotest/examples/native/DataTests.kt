@@ -2,12 +2,12 @@ package io.kotest.examples.native
 
 import io.kotest.core.spec.style.FunSpec
 import io.kotest.datatest.withTests
-import io.kotest.matchers.shouldBe
+import io.kotest.matchers.string.shouldStartWith
 
 class DataTests : FunSpec() {
    init {
-      withTests("tinker", "tailor", "soldier", "sailor") {
-         1 + 1 shouldBe 2
+      withTests("tinker", "tailor", "teacher") { name ->
+         name.shouldStartWith("t")
       }
    }
 }
