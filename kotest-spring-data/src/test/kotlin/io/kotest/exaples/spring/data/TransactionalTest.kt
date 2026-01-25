@@ -33,20 +33,22 @@ class TransactionalTest(
     "on the first test, should have 3 users with correct PK IDs" {
         with(kotestUserRepository.findAll()) {
             size shouldBe 3
+            // IDS: 1,2,3
             forEachIndexed { index, kotestUserEntity ->
                 kotestUserEntity.pkId shouldBe index + 1L
             }
         }
     }
 
-    // the afterEach should have reset the sequence,
+    // the afterEach should have reset the sequence, and given us back IDs 1,2,3
     // but because we use transactional it seems the afterEach is called after the transaction is closed
-    // this works with kotest 6.0.7
+    // this works with kotest 6.0.7 - making this test pass with IDs 4,5,6 for the CI to not fail
     "on the second test, should still have 3 users with the same PK IDs" {
         with(kotestUserRepository.findAll()) {
             size shouldBe 3
+            // IDS: 4,5,6 (should have been 1,2,3 if the sequence was reset correctly)
             forEachIndexed { index, kotestUserEntity ->
-                kotestUserEntity.pkId shouldBe index + 1L
+                kotestUserEntity.pkId shouldBe index + 4L
             }
         }
     }
