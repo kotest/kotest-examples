@@ -8,6 +8,7 @@ This repo contains multiple examples of how to use Kotest.
 * [Multiplatform](./kotest-multiplatform) &mdash; example of a multiplatform project with JVM, JS and Native modules
 * [Javscript](./kotest-javascript) &mdash; example of a JavaScript project
 * [Native](./kotest-native) &mdash; example of a native project with Linux, Windows and Mac targets
+* [Spring Data JPA](./kotest-spring-data) &mdash; example of a JVM project using Spring Data JPA
 * [Spring Webflux](./kotest-spring-webflux) &mdash; example of a JVM project using Spring Webflux
 * [Allure](./kotest-allure) &mdash; example of a JVM project using Allure test reporting
 * [Wasm](./kotest-wasm) &mdash; example of a Wasm project
@@ -21,10 +22,10 @@ This is useful for CI workflows that need to test against a specific or newly-bu
 
 ### Environment Variables
 
-| Variable | Description |
-|----------|-------------|
-| `KOTEST_VERSION` | Overrides the Kotest library dependencies version |
-| `KOTEST_GRADLE_PLUGIN_VERSION` | Overrides the io.kotest Gradle plugin version |
+| Variable                       | Description                                       |
+|--------------------------------|---------------------------------------------------|
+| `KOTEST_VERSION`               | Overrides the Kotest library dependencies version |
+| `KOTEST_GRADLE_PLUGIN_VERSION` | Overrides the io.kotest Gradle plugin version     |
 
 ### Examples
 
