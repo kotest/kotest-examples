@@ -1,3 +1,5 @@
+@file:Suppress("UnstableApiUsage")
+
 pluginManagement {
    repositories {
       google {
@@ -18,7 +20,6 @@ apply(from = "../kotest-plugin-override.settings.gradle.kts")
 apply(from = "../kotest-version-override.settings.gradle.kts")
 
 dependencyResolutionManagement {
-   repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
    repositories {
       google()
       mavenCentral()
@@ -30,4 +31,4 @@ dependencyResolutionManagement {
 rootProject.name = "Kotest Android Example"
 
 include(":app")
-include(":shared")
+//include(":shared")

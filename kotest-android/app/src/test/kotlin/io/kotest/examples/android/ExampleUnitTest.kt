@@ -1,7 +1,7 @@
-package com.example.kotestdemo.shared
+package io.kotest.examples.android
 
 import io.kotest.core.spec.style.BehaviorSpec
-import org.junit.Assert.assertEquals
+import org.junit.Assert
 
 /**
  * Example local unit test, which will execute on the development machine (host).
@@ -11,20 +11,20 @@ import org.junit.Assert.assertEquals
  *
  * See [testing documentation](http://d.android.com/tools/testing).
  */
-class SharedModuleUnitTest : BehaviorSpec({
+class ExampleUnitTest : BehaviorSpec({
 
    Given("This is a test") {
-      When("fake is called") {
+      When("test is called") {
          Then("Pass the test") {
-            assertEquals(4, 2 + 2)
+             Assert.assertEquals(4, 2 + 2)
          }
       }
    }
 
    Given("This is another test") {
-      When("fake is called") {
+      When("test is called") {
          Then("Pass the test") {
-            assertEquals(4, 2 + 2)
+             Assert.assertEquals(4, 2 + 2)
          }
       }
    }

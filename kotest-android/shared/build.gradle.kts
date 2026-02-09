@@ -1,27 +1,19 @@
 plugins {
    alias(libs.plugins.android.library)
    alias(libs.plugins.jetbrains.kotlin.android)
-   alias(libs.plugins.kotest)
 }
-
 android {
    namespace = "io.kotest.examples.android.shared"
-   compileSdk = 35
+   compileSdk = 36
 
    defaultConfig {
       minSdk = 26
-
       testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-      consumerProguardFiles("consumer-rules.pro")
    }
 
    buildTypes {
       release {
-         isMinifyEnabled = false
-         proguardFiles(
-            getDefaultProguardFile("proguard-android-optimize.txt"),
-            "proguard-rules.pro"
-         )
+         isMinifyEnabled = true
       }
    }
 
@@ -30,21 +22,29 @@ android {
       targetCompatibility = JavaVersion.VERSION_11
    }
 
-   kotlinOptions {
-      jvmTarget = "11"
-   }
-
+   @Suppress("UnstableApiUsage")
    testOptions {
       unitTests.all {
          it.useJUnit()
+      }
+      animationsDisabled = true
+      managedDevices {
+         localDevices {
+            create("pixel9a_api30") {
+               device = "Pixel 9a"
+               apiLevel = 30
+               systemImageSource = "google"
+            }
+         }
       }
    }
 }
 
 dependencies {
-   implementation(libs.mockk.android)
-   implementation(libs.kotest.assertions)
-   implementation(libs.kotest.framework)
-   testImplementation(libs.junit)
+   testImplementation(libs.mockk.android)
+   testImplementation(libs.kotest.assertions)
+   testImplementation(libs.kotest.junit5)
+
    androidTestImplementation(libs.androidx.junit)
+   testImplementation(libs.kotest.junit4)
 }

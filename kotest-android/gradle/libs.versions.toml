@@ -1,34 +1,43 @@
 [versions]
-agp = "8.13.2"
-kotlin = "2.2.0"
+agp = "8.12.0"
+# https://github.com/JetBrains/kotlin/releases
+kotlin = "2.2.21"
 coreKtx = "1.17.0"
-coroutines = "1.10.2"
 junit = "4.13.2"
-jupiter = "5.13.3"
 junitVersion = "1.3.0"
 espressoCore = "3.7.0"
 appcompat = "1.7.1"
-material = "1.13.0"
+
 mockk = "1.14.7"
-kotest = "6.0.4"
-kotest-plugin = "6.0.4"
+kotest = "6.1.1"
+
+# https://developer.android.com/jetpack/androidx/versions/all-channel
+androidx-test-runner = "1.7.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+
+# https://developer.android.com/develop/ui/compose/bom/bom-mapping
+androidx-compose-bom = "androidx.compose:compose-bom:2026.01.00"
+
+androidx-test-runner = { module = "androidx.test:runner", version.ref = "androidx-test-runner" }
+androidx-ui-test-junit4 = { module = "androidx.compose.ui:ui-test-junit4" }
+androidx-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest" }
 
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
-material = { group = "com.google.android.material", name = "material", version.ref = "material" }
-
-kotlin-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
-
-kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin" }
+material = { group = "androidx.compose.material3", name = "material3" }
 
 kotest-framework = { module = "io.kotest:kotest-framework-engine", version.ref = "kotest" }
 kotest-assertions = { module = "io.kotest:kotest-assertions-core", version.ref = "kotest" }
+
+# used for instrumented (device) tests
+kotest-runner-junit4 = { module = "io.kotest:kotest-runner-junit4", version.ref = "kotest" }
+
+# used for unit (hosted) tests
 kotest-runner-junit5 = { module = "io.kotest:kotest-runner-junit5", version.ref = "kotest" }
 
 mockk-agent = { module = "io.mockk:mockk-agent", version.ref = "mockk" }
@@ -38,5 +47,4 @@ mockk-android = { module = "io.mockk:mockk-android", version.ref = "mockk" }
 android-library = { id = "com.android.library", version.ref = "agp" }
 android-application = { id = "com.android.application", version.ref = "agp" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
-kotest = { id = "io.kotest", version.ref = "kotest-plugin" }
-
+jetbrains-kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
