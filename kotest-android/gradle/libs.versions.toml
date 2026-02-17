@@ -8,7 +8,7 @@ junitVersion = "1.3.0"
 espressoCore = "3.7.0"
 appcompat = "1.7.1"
 
-mockk = "1.14.7"
+mockk = "1.14.9"
 kotest = "6.1.1"
 
 # https://developer.android.com/jetpack/androidx/versions/all-channel
