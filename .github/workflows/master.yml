@@ -10,8 +10,8 @@ on:
     branches:
       - master
   pull_request:
-  
-# This will prevent multiple parallel runs, and will cancel queued runs except the latest one.
+
+# This will prevent multiple parallel runs and will cancel queued runs except the latest one.
 concurrency:
    group: 'master-ci'
    cancel-in-progress: false
@@ -45,7 +45,7 @@ jobs:
         uses: actions/setup-java@v5
         with:
           distribution: 'temurin'
-          java-version: '21'
+          java-version-file: .github/.java-version
 
       - name: Run tests
         working-directory: ./${{ matrix.project }}
@@ -80,7 +80,7 @@ jobs:
         uses: actions/setup-java@v5
         with:
            distribution: 'temurin'
-           java-version: '17'
+           java-version-file: .github/.java-version
 
       - name: Run tests
         working-directory: ./${{ matrix.project }}
@@ -115,7 +115,7 @@ jobs:
         uses: actions/setup-java@v5
         with:
            distribution: 'temurin'
-           java-version: '17'
+           java-version-file: .github/.java-version
 
       - name: Run tests
         working-directory: ./${{ matrix.project }}
