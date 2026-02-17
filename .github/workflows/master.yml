@@ -28,6 +28,7 @@ jobs:
           - kotest-android
           - kotest-javascript
           - kotest-jvm
+          - kotest-maven
           - kotest-multiplatform
           - kotest-native
           - kotest-spring-webflux
