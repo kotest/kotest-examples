@@ -7,6 +7,8 @@
 build/
 .idea/
 .gradle/
+target/
+yarn.lock
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
