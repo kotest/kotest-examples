@@ -4,9 +4,9 @@ import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
 import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
 
 plugins {
-   alias(commonLibs.plugins.kotlin.multiplatform)
-   alias(commonLibs.plugins.kotest)
-   alias(commonLibs.plugins.ksp)
+   alias(libs.plugins.kotlin.multiplatform)
+   alias(libs.plugins.kotest)
+   alias(libs.plugins.ksp)
 }
 
 kotlin {
@@ -31,8 +31,8 @@ kotlin {
    sourceSets {
       commonTest {
          dependencies {
-            implementation(commonLibs.kotest.framework.engine)
-            implementation(commonLibs.kotest.assertions.core)
+            implementation(libs.kotest.framework.engine)
+            implementation(libs.kotest.assertions.core)
          }
       }
    }
