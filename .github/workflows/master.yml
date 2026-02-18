@@ -48,8 +48,14 @@ jobs:
           java-version-file: .github/.java-version
 
       - name: Run tests
+        if: matrix.project != kotest-maven # the maven example doesn't use gradle of course
         working-directory: ./${{ matrix.project }}
         run: ./gradlew check
+
+      - name: Run tests
+        if: matrix.project == kotest-maven # the maven example doesn't use gradle of course
+        working-directory: ./${{ matrix.project }}
+        run: mvn -B test
 
       - name: Bundle the build report
         if: failure()
