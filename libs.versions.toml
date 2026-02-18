@@ -40,6 +40,7 @@ material = { group = "androidx.compose.material3", name = "material3" }
 
 kotest-framework-engine = { module = "io.kotest:kotest-framework-engine", version.ref = "kotest" }
 kotest-assertions-core = { module = "io.kotest:kotest-assertions-core", version.ref = "kotest" }
+kotest-extensions-allure = { module = "io.kotest:kotest-extensions-allure", version.ref = "kotest" }
 
 # used for instrumented (device) tests
 kotest-runner-junit4 = { module = "io.kotest:kotest-runner-junit4", version.ref = "kotest" }
