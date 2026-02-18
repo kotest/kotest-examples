@@ -1,14 +1,9 @@
 import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
 
 plugins {
-   alias(libs.plugins.kotlin)
-   alias(libs.plugins.kotest)
-   alias(libs.plugins.retry)
-}
-
-repositories {
-   mavenCentral()
-   mavenLocal()
+   alias(commonLibs.plugins.kotlin.jvm)
+   alias(commonLibs.plugins.kotest)
+   alias(commonLibs.plugins.retry)
 }
 
 java {
@@ -43,8 +38,8 @@ kotlin {
    sourceSets {
       test {
          dependencies {
-            implementation(libs.kotest.runner.junit5)
-            implementation(libs.kotest.assertions.core)
+            implementation(commonLibs.kotest.runner.junit5)
+            implementation(commonLibs.kotest.assertions.core)
          }
       }
    }
