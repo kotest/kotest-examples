@@ -1,0 +1,13 @@
+[versions]
+kotlin = "2.2.10"
+kotest = "6.0.4"
+allure = "3.0.1"
+allure-report = "2.29.1"
+
+[libraries]
+kotest-extensions-allure = { module = "io.kotest:kotest-extensions-allure", version.ref = "kotest" }
+kotest-runner-junit5 = { module = "io.kotest:kotest-runner-junit5", version.ref = "kotest" }
+
+[plugins]
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+allure = { id = "io.qameta.allure", version.ref = "allure" }
