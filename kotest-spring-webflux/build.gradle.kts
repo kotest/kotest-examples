@@ -2,9 +2,9 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
 
 plugins {
-   id("org.springframework.boot") version "4.0.1"
-   alias(libs.plugins.kotlin.jvm)
-   alias(libs.plugins.kotlin.plugin.spring)
+   alias(commonLibs.plugins.kotlin.jvm)
+   alias(commonLibs.plugins.spring.boot)
+   alias(commonLibs.plugins.kotlin.plugin.spring)
 }
 
 apply(plugin = "io.spring.dependency-management")
@@ -27,18 +27,17 @@ kotlin {
 }
 
 dependencies {
-   implementation(kotlin("reflect"))
-   implementation(libs.spring.boot.starter.webflux)
-   implementation(libs.jackson.module.kotlin)
-   implementation(libs.reactor.kotlin.extensions)
-   implementation(libs.kotlinx.coroutines.reactor)
+   implementation(commonLibs.spring.boot.starter.webflux)
+   implementation(commonLibs.jackson.module.kotlin)
+   implementation(commonLibs.reactor.kotlin.extensions)
+   implementation(commonLibs.kotlinx.coroutines.reactor)
 
-   testImplementation(libs.springmockk)
-   testImplementation(libs.kotest.runner.junit5)
-   testImplementation(libs.kotest.extensions.spring)
-   testImplementation(libs.reactor.test)
-   testImplementation(libs.spring.boot.webtestclient)
-   testImplementation(libs.spring.boot.starter.test) {
+   testImplementation(commonLibs.springmockk)
+   testImplementation(commonLibs.kotest.runner.junit5)
+   testImplementation(commonLibs.kotest.extensions.spring)
+   testImplementation(commonLibs.reactor.test)
+   testImplementation(commonLibs.spring.boot.webtestclient)
+   testImplementation(commonLibs.spring.boot.starter.test) {
       exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
       exclude(module = "mockito-core")
    }
