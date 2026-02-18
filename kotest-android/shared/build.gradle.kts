@@ -1,6 +1,6 @@
 plugins {
-   alias(commonLibs.plugins.android.library)
-   alias(commonLibs.plugins.jetbrains.kotlin.android)
+   alias(libs.plugins.android.library)
+   alias(libs.plugins.jetbrains.kotlin.android)
 }
 android {
    namespace = "io.kotest.examples.android.shared"
@@ -41,10 +41,10 @@ android {
 }
 
 dependencies {
-   testImplementation(commonLibs.mockk.android)
-   testImplementation(commonLibs.kotest.assertions)
-   testImplementation(commonLibs.kotest.junit5)
+   testImplementation(libs.mockk.android)
+   testImplementation(libs.kotest.assertions)
+   testImplementation(libs.kotest.junit5)
 
-   androidTestImplementation(commonLibs.androidx.junit)
-   testImplementation(commonLibs.kotest.junit4)
+   androidTestImplementation(libs.androidx.junit)
+   testImplementation(libs.kotest.junit4)
 }
