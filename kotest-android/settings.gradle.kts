@@ -26,11 +26,6 @@ dependencyResolutionManagement {
       mavenLocal()
       maven("https://central.sonatype.com/repository/maven-snapshots")
    }
-   versionCatalogs {
-      create("commonLibs") {
-         from(files(settingsDir.parentFile.resolve("libs.versions.toml")))
-      }
-   }
 }
 
 rootProject.name = "Kotest Android Example"
