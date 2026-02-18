@@ -12,8 +12,6 @@ mockk = "1.14.9"
 kotest = "6.1.3"
 kotest-plugin = "6.1.3"
 
-spring-boot = "4.0.1"
-
 ksp = "2.3.6"
 gradle-retry = "1.6.4"
 
@@ -40,9 +38,6 @@ androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-co
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material = { group = "androidx.compose.material3", name = "material3" }
 
-kotest-extensions-spring = { module = "io.kotest:kotest-extensions-spring", version.ref = "kotest" }
-springmockk = { module = "com.ninja-squad:springmockk", version = "5.0.1" }
-
 kotest-framework-engine = { module = "io.kotest:kotest-framework-engine", version.ref = "kotest" }
 kotest-assertions-core = { module = "io.kotest:kotest-assertions-core", version.ref = "kotest" }
 kotest-extensions-allure = { module = "io.kotest:kotest-extensions-allure", version.ref = "kotest" }
@@ -54,24 +49,11 @@ kotest-runner-junit5 = { module = "io.kotest:kotest-runner-junit5", version.ref 
 mockk-agent = { module = "io.mockk:mockk-agent", version.ref = "mockk" }
 mockk-android = { module = "io.mockk:mockk-android", version.ref = "mockk" }
 
-# Versions managed by Spring dependency management and thus excluded here
-kotlinx-coroutines-reactor = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-reactor" }
-reactor-kotlin-extensions = { module = "io.projectreactor.kotlin:reactor-kotlin-extensions" }
-reactor-test = { module = "io.projectreactor:reactor-test" }
-
-spring-boot-starter-webflux = { module = "org.springframework.boot:spring-boot-starter-webflux" }
-spring-boot-starter-test = { module = "org.springframework.boot:spring-boot-starter-test" }
-spring-boot-webtestclient = { module = "org.springframework.boot:spring-boot-webtestclient" }
-jackson-module-kotlin = { module = "com.fasterxml.jackson.module:jackson-module-kotlin" }
-
-
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
-kotlin-plugin-spring = { id = "org.jetbrains.kotlin.plugin.spring", version.ref = "kotlin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 kotest = { id = "io.kotest", version.ref = "kotest-plugin" }
-spring-boot = { id = "org.springframework.boot", version.ref = "spring-boot" }
 
 android-library = { id = "com.android.library", version.ref = "agp" }
 android-application = { id = "com.android.application", version.ref = "agp" }
