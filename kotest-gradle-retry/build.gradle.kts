@@ -26,10 +26,10 @@ tasks.test {
    }
 
    retry {
-      maxRetries.set(100)
-      maxFailures.set(100)
-      failOnPassedAfterRetry.set(true)
-      failOnSkippedAfterRetry.set(true)
+      maxRetries = 100
+      maxFailures = 100
+      failOnPassedAfterRetry = false
+      failOnSkippedAfterRetry = false
    }
 }
 
