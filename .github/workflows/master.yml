@@ -34,6 +34,7 @@ jobs:
           - kotest-spring-webflux
           - kotest-spring-data
           - kotest-wasm
+          - kotest-gradle-retry
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the repo
