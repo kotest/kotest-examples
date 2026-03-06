@@ -1,7 +1,7 @@
 [versions]
 kotlin = "2.2.21"
 kotest = "6.1.3"
-kotest-plugin = "6.1.3"
+kotest-plugin = "6.1.4"
 ksp = "2.3.6"
 
 [libraries]
