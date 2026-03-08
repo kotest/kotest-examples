@@ -2,15 +2,15 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
 
 plugins {
    alias(libs.plugins.kotlin.multiplatform)
-   alias(libs.plugins.kotest)
    alias(libs.plugins.ksp)
+   alias(libs.plugins.kotest)
 }
 
 kotlin {
 
    compilerOptions {
-      languageVersion = KotlinVersion.KOTLIN_2_2
-      apiVersion = KotlinVersion.KOTLIN_2_2
+      languageVersion = KotlinVersion.KOTLIN_2_3
+      apiVersion = KotlinVersion.KOTLIN_2_3
    }
 
    linuxX64()
@@ -27,4 +27,8 @@ kotlin {
          }
       }
    }
+}
+
+kotest {
+   alwaysRerunTests = true
 }
