@@ -3,16 +3,13 @@ package io.kotest.examples.android
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
+import androidx.compose.ui.test.junit4.ComposeContentTestRule
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithText
 import io.kotest.core.spec.style.FreeSpec
-import io.kotest.core.test.TestScope
 import io.kotest.runner.junit4.KotestTestRunner
-import io.kotest.runner.junit4.describeTestCase
-import kotlinx.coroutines.runBlocking
-import org.junit.rules.TestRule
+import org.junit.Rule
 import org.junit.runner.RunWith
-import org.junit.runners.model.Statement
 
 /**
  * Instrumented test using Kotest, which will execute on an Android device.
@@ -25,39 +22,30 @@ import org.junit.runners.model.Statement
  */
 @RunWith(KotestTestRunner::class)
 class ComposeWithKotest : FreeSpec() {
+
+   @get:Rule
+   val composeTestRule: ComposeContentTestRule = createComposeRule()
+
    init {
       "should have initial state of 0" {
-         withRule(createComposeRule()) { composeTestRule ->
 
-            composeTestRule.setContent {
-               TestComposable()
-            }
-
-            composeTestRule.onNodeWithText("0").assertExists()
-            composeTestRule.onNodeWithText("Click me!").assertExists()
+         composeTestRule.setContent {
+            TestComposable()
          }
+
+         composeTestRule.onNodeWithText("0").assertExists()
+         composeTestRule.onNodeWithText("Click me!").assertExists()
       }
       "should increment when clicked" {
-         withRule(createComposeRule()) { composeTestRule ->
 
-            composeTestRule.setContent {
-               TestComposable()
-            }
-
-            composeTestRule.onNodeWithText("0").assertExists()
-            composeTestRule.onNodeWithText("Click me!").assertExists()
+         composeTestRule.setContent {
+            TestComposable()
          }
-      }
-   }
-}
 
-fun <R : TestRule> TestScope.withRule(rule: R, fn: suspend (rule: R) -> Unit) {
-   val base = object : Statement() {
-      override fun evaluate() {
-         runBlocking { fn.invoke(rule) }
+         composeTestRule.onNodeWithText("0").assertExists()
+         composeTestRule.onNodeWithText("Click me!").assertExists()
       }
    }
-   rule.apply(base, describeTestCase(this.testCase, testCase.name.name)).evaluate()
 }
 
 /**

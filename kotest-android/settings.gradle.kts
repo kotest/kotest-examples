@@ -28,7 +28,7 @@ dependencyResolutionManagement {
    }
 }
 
-rootProject.name = "Kotest Android Example"
+rootProject.name = "kotest-android"
 
 include(":app")
 //include(":shared")
