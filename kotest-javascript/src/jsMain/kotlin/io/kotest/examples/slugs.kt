@@ -1,4 +1,4 @@
-package io.kotest.examples.js
+package io.kotest.examples
 
 @JsModule("slugify")
 @JsNonModule

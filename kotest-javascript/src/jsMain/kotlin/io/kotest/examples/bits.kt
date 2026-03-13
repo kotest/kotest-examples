@@ -1,4 +1,4 @@
-package io.kotest.examples.js
+package io.kotest.examples
 
 fun bitstring(bits: List<Boolean>): String {
    require(bits.isNotEmpty())

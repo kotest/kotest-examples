@@ -1,4 +1,4 @@
-package io.kotest.examples.js
+package io.kotest.examples
 
 import io.kotest.core.spec.style.FunSpec
 import io.kotest.matchers.shouldBe

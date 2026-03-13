@@ -1,4 +1,4 @@
-package io.kotest.examples.js
+package io.kotest.examples
 
 import io.kotest.core.config.AbstractProjectConfig
 

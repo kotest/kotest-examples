@@ -1,4 +1,4 @@
-package io.kotest.examples.common
+package io.kotest.examples
 
 import io.kotest.core.spec.style.ShouldSpec
 import io.kotest.matchers.shouldBe

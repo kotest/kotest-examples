@@ -28,11 +28,6 @@ kotlin {
    }
 
    sourceSets {
-      commonMain {
-         dependencies {
-            api(kotlin("stdlib"))
-         }
-      }
       commonTest {
          dependencies {
             implementation(libs.kotest.assertions.core)
