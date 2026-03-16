@@ -18,19 +18,31 @@ kotlin {
 
    jvm()
    js {
-      browser()
+      browser {
+         testTask {
+            useKarma {
+               useChrome()
+               useChromeHeadless()
+            }
+         }
+      }
       nodejs()
    }
 
    @OptIn(ExperimentalWasmDsl::class)
    wasmJs {
       browser {
-         testTask { useKarma { useChromeHeadless() } }
+         testTask {
+            useKarma {
+               useChrome()
+               useChromeHeadless()
+            }
+         }
          val rootDirPath = project.rootDir.path
          val projectDirPath = project.projectDir.path
          commonWebpackConfig {
             devServer = (devServer ?: KotlinWebpackConfig.DevServer()).apply {
-                  // Serve sources to debug inside the browser
+               // Serve sources to debug inside the browser
                static(rootDirPath)
                static(projectDirPath)
             }
@@ -83,4 +95,8 @@ tasks.named<Test>("jvmTest") {
    filter {
       isFailOnNoMatchingTests = false
    }
+}
+
+tasks.withType<AbstractTestTask>().configureEach {
+   outputs.upToDateWhen { false }
 }
