@@ -2,6 +2,7 @@ package io.kotest.examples.js
 
 import io.kotest.assertions.throwables.shouldThrowAny
 import io.kotest.core.spec.style.DescribeSpec
+import io.kotest.examples.bitstring
 import io.kotest.matchers.shouldBe
 
 class BitstringTest : DescribeSpec() {
