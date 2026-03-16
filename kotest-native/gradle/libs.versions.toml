@@ -1,6 +1,6 @@
 [versions]
-kotest = "6.1.5"
-kotest-plugin = "6.1.5"
+kotest = "6.1.7"
+kotest-plugin = "6.1.7"
 kotlin = "2.3.10"
 ksp = "2.3.6"
 
