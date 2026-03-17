@@ -9,6 +9,10 @@ plugins {
    alias(libs.plugins.ksp)
 }
 
+kotest {
+   alwaysRerunTests = true
+}
+
 kotlin {
 
    compilerOptions {
@@ -32,6 +36,7 @@ kotlin {
          dependencies {
             implementation(libs.kotest.assertions.core)
             implementation(libs.kotest.framework.engine)
+            implementation(kotlin("test"))
          }
       }
       jsMain {
