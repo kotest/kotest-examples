@@ -1,6 +1,6 @@
 [versions]
 kotlin = "2.3.0"
-kotest = "6.1.0"
+kotest = "6.1.7"
 postgresql-test-containers = "1.21.4"
 
 [libraries]
