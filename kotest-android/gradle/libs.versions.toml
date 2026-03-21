@@ -9,7 +9,7 @@ espressoCore = "3.7.0"
 appcompat = "1.7.1"
 
 mockk = "1.14.9"
-kotest = "6.1.8"
+kotest = "6.1.7"
 
 # https://developer.android.com/jetpack/androidx/versions/all-channel
 androidx-test-runner = "1.7.0"
