@@ -21,8 +21,7 @@ kotlin {
       browser {
          testTask {
             useKarma {
-               useChrome()
-               useChromeHeadless()
+               useChromeHeadlessNoSandbox()
             }
          }
       }
@@ -34,8 +33,7 @@ kotlin {
       browser {
          testTask {
             useKarma {
-               useChrome()
-               useChromeHeadless()
+               useChromeHeadlessNoSandbox()
             }
          }
          val rootDirPath = project.rootDir.path
