@@ -12,19 +12,17 @@ version = "0.0.1-SNAPSHOT"
 java {
    sourceCompatibility = JavaVersion.VERSION_11
    targetCompatibility = JavaVersion.VERSION_11
-   withSourcesJar()
 }
 
 kotlin {
    compilerOptions {
       jvmTarget = JvmTarget.JVM_11
-      languageVersion = KotlinVersion.KOTLIN_2_2
-      apiVersion = KotlinVersion.KOTLIN_2_2
+      languageVersion = KotlinVersion.KOTLIN_2_3
+      apiVersion = KotlinVersion.KOTLIN_2_3
    }
 }
 
 dependencies {
-   implementation(kotlin("stdlib"))
    implementation(kotlin("reflect"))
    testImplementation(libs.kotest.extensions.allure)
    testImplementation(libs.kotest.runner.junit5)

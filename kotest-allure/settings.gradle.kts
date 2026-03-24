@@ -2,7 +2,6 @@ pluginManagement {
    repositories {
       gradlePluginPortal()
       mavenLocal()
-      maven("https://central.sonatype.com/repository/maven-snapshots")
    }
 }
 
@@ -15,6 +14,5 @@ dependencyResolutionManagement {
    repositories {
       mavenCentral()
       mavenLocal()
-      maven("https://central.sonatype.com/repository/maven-snapshots")
    }
 }
