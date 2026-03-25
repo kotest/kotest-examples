@@ -43,8 +43,7 @@ android {
 dependencies {
    testImplementation(libs.mockk.android)
    testImplementation(libs.kotest.assertions)
-   testImplementation(libs.kotest.junit5)
+   testImplementation(libs.kotest.runner.junit5)
 
    androidTestImplementation(libs.androidx.junit)
-   testImplementation(libs.kotest.junit4)
 }

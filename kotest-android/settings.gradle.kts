@@ -31,4 +31,4 @@ dependencyResolutionManagement {
 rootProject.name = "kotest-android"
 
 include(":app")
-//include(":shared")
+include(":shared")
