@@ -1,7 +1,7 @@
 package io.kotest.examples.android
 
 import io.kotest.core.spec.style.BehaviorSpec
-import org.junit.Assert
+import io.kotest.matchers.shouldBe
 
 /**
  * Example local unit test, which will execute on the development machine (host).
@@ -16,7 +16,7 @@ class ExampleUnitTest : BehaviorSpec({
    Given("This is a test") {
       When("test is called") {
          Then("Pass the test") {
-             Assert.assertEquals(4, 2 + 2)
+            2 + 2 shouldBe 4
          }
       }
    }
@@ -24,7 +24,7 @@ class ExampleUnitTest : BehaviorSpec({
    Given("This is another test") {
       When("test is called") {
          Then("Pass the test") {
-             Assert.assertEquals(4, 2 + 2)
+            2 + 2 shouldBe 4
          }
       }
    }
