@@ -1,7 +1,7 @@
 [versions]
 kotlin = "2.2.21"
-kotest = "6.1.7"
-kotest-plugin = "6.1.7"
+kotest = "6.1.9"
+kotest-plugin = "6.1.9"
 ktor = "3.3.3"
 ksp = "2.3.6"
 
