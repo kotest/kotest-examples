@@ -17,6 +17,12 @@ android {
       }
    }
 
+   packaging {
+      resources {
+         excludes += "/META-INF/{AL2.0,LGPL2.1,LICENSE*.md}"
+      }
+   }
+
    compileOptions {
       sourceCompatibility = JavaVersion.VERSION_21
       targetCompatibility = JavaVersion.VERSION_21
@@ -25,7 +31,7 @@ android {
    @Suppress("UnstableApiUsage")
    testOptions {
       unitTests.all {
-         it.useJUnit()
+         it.useJUnitPlatform()
       }
       animationsDisabled = true
       managedDevices {
@@ -50,5 +56,6 @@ dependencies {
    implementation(libs.mockk.android)
    implementation(libs.mockk.agent)
 
+   testImplementation(libs.kotest.runner.junit5)
    testImplementation(libs.kotest.assertions)
 }

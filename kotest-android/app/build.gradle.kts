@@ -64,7 +64,7 @@ tasks.withType<AbstractTestTask>().configureEach {
 }
 
 dependencies {
-//   implementation(project(":shared"))
+   implementation(project(":shared"))
 
    // sets the versions for all the compose libraries
    val composeBom = platform(libs.androidx.compose.bom)
