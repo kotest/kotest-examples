@@ -11,7 +11,7 @@ import io.kotest.matchers.shouldBe
  *
  * See [testing documentation](http://d.android.com/tools/testing).
  */
-class ExampleUnitTest : BehaviorSpec({
+class SharedModuleUnitTest : BehaviorSpec({
 
    Given("This is a test") {
       When("test is called") {

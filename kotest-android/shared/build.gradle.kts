@@ -18,8 +18,8 @@ android {
    }
 
    compileOptions {
-      sourceCompatibility = JavaVersion.VERSION_11
-      targetCompatibility = JavaVersion.VERSION_11
+      sourceCompatibility = JavaVersion.VERSION_21
+      targetCompatibility = JavaVersion.VERSION_21
    }
 
    @Suppress("UnstableApiUsage")
@@ -40,10 +40,15 @@ android {
    }
 }
 
-dependencies {
-   testImplementation(libs.mockk.android)
-   testImplementation(libs.kotest.assertions)
-   testImplementation(libs.kotest.runner.junit5)
+tasks.withType<AbstractTestTask>().configureEach {
+   failOnNoDiscoveredTests = false
+   outputs.upToDateWhen { false }
+}
 
-   androidTestImplementation(libs.androidx.junit)
+dependencies {
+   implementation(libs.kotest.framework)
+   implementation(libs.mockk.android)
+   implementation(libs.mockk.agent)
+
+   testImplementation(libs.kotest.assertions)
 }

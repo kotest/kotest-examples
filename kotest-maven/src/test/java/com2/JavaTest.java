@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class JavaTest {
 
   @Test
-  void javaTestshouldFail() {
+  void javaTest() {
     assertEquals(2, 1 + 1);
   }
 

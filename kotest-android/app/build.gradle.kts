@@ -60,6 +60,7 @@ android {
 
 tasks.withType<AbstractTestTask>().configureEach {
    failOnNoDiscoveredTests = false
+   outputs.upToDateWhen { false }
 }
 
 dependencies {
@@ -78,7 +79,6 @@ dependencies {
    implementation(libs.junit)
 
    testImplementation(libs.junit)
-   testImplementation(libs.kotest.framework)
    testImplementation(libs.kotest.assertions)
    testImplementation(libs.kotest.runner.junit5)
    testImplementation(libs.mockk.android)
