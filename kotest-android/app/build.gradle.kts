@@ -85,7 +85,6 @@ dependencies {
    testImplementation(libs.mockk.agent)
 
    // dependencies for device-side tests
-   androidTestImplementation(libs.kotest.framework)
    androidTestImplementation(libs.kotest.assertions)
    androidTestImplementation(libs.kotest.runner.junit4)
    androidTestImplementation(libs.androidx.junit)
