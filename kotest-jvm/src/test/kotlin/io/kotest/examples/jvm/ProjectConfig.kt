@@ -1,4 +1,4 @@
-package io.kotest.provided
+package io.kotest.examples.jvm
 
 import io.kotest.core.config.AbstractProjectConfig
 import io.kotest.core.listeners.AfterTestListener
