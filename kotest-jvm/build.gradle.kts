@@ -36,6 +36,7 @@ kotlin {
             implementation(libs.kotest.framework.engine)
             implementation(libs.kotest.runner.junit5)
             implementation(libs.kotest.assertions.core)
+            implementation("org.junit.jupiter:junit-jupiter:6.0.3")
          }
       }
    }

@@ -3,6 +3,7 @@ package io.kotest.examples.jvm
 import io.kotest.core.spec.style.FunSpec
 import io.kotest.datatest.withContexts
 import io.kotest.datatest.withTests
+import io.kotest.matchers.shouldBe
 import io.kotest.matchers.string.shouldNotInclude
 
 class DataTest : FunSpec() {
@@ -10,6 +11,11 @@ class DataTest : FunSpec() {
       withContexts("foo", "bar", "baz") { a ->
          withTests("tinker", "tailor", "toaster") { t ->
             a shouldNotInclude t
+         }
+      }
+      context("a") {
+         test("b") {
+            1 shouldBe 2
          }
       }
    }
