@@ -13,10 +13,5 @@ class DataTest : FunSpec() {
             a shouldNotInclude t
          }
       }
-      context("a") {
-         test("b") {
-            1 shouldBe 2
-         }
-      }
    }
 }
