@@ -1,7 +1,7 @@
 [versions]
 kotlin = "2.3.20"
 kotest = "6.1.7"
-allure-plugin = "3.0.2"
+allure-plugin = "3.1.0"
 allure-report = "2.29.1"
 
 [libraries]
