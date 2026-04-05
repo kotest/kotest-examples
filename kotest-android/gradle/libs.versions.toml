@@ -1,5 +1,5 @@
 [versions]
-agp = "8.12.3"
+agp = "8.13.2"
 # https://github.com/JetBrains/kotlin/releases
 kotlin = "2.3.20"
 coreKtx = "1.18.0"
