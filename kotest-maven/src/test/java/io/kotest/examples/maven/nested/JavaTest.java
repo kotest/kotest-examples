@@ -1,4 +1,4 @@
-package com2;
+package io.kotest.examples.maven.nested;
 
 import org.junit.jupiter.api.Test;
 

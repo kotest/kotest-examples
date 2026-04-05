@@ -1,4 +1,4 @@
-package com;
+package io.kotest.examples.maven;
 
 import org.junit.jupiter.api.Test;
 
