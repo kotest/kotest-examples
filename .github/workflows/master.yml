@@ -26,15 +26,15 @@ jobs:
         project: 
           - kotest-allure
           - kotest-android
+          - kotest-gradle-retry
           - kotest-javascript
           - kotest-jvm
           - kotest-maven
           - kotest-multiplatform
           - kotest-native
-          - kotest-spring-webflux
           - kotest-spring-data
+          - kotest-spring-webflux
           - kotest-wasm
-          - kotest-gradle-retry
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the repo
