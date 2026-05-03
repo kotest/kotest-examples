@@ -1,0 +1,19 @@
+*.class
+
+# Package files
+*.jar
+*.war
+*.ear
+
+# IntelliJ / Fleet
+*.iml
+.idea
+.fleet
+
+# Amper build output
+build/
+
+# OS / misc
+.DS_Store
+hs_err_pid*
+.kotlin

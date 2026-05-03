@@ -1,0 +1,14 @@
+product: jvm/lib
+
+settings:
+  kotlin:
+    version: 2.3.20
+  jvm:
+    release: 17
+  junit: junit-5
+
+test-dependencies:
+  - io.kotest:kotest-runner-junit5:6.1.10
+  - io.kotest:kotest-assertions-core:6.1.10
+  - io.kotest:kotest-framework-engine:6.1.10
+  - org.junit.jupiter:junit-jupiter:6.0.3
