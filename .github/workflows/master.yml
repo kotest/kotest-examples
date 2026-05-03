@@ -41,7 +41,7 @@ jobs:
           - command: ./gradlew check
           - command: mvn -B test #override to use maven for the maven example
             project: kotest-maven
-          - command: amper test #override to use amper for the amper example
+          - command: ./amper test #override to use the amper wrapper for the amper example
             project: kotest-amper
     runs-on: ubuntu-latest
     steps:
