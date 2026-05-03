@@ -21,7 +21,7 @@ import org.junit.runner.RunWith
  * See [testing documentation](http://d.android.com/tools/testing).
  */
 @RunWith(KotestTestRunner::class)
-class ComposeWithKotest : FreeSpec() {
+open class ComposeWithKotest : FreeSpec() {
 
    @get:Rule
    val composeTestRule: ComposeContentTestRule = createComposeRule()
