@@ -14,7 +14,8 @@ This repo contains multiple examples of how to use Kotest.
 * [Wasm](./kotest-wasm) &mdash; example of a Wasm project
 * [Android](./kotest-android) &mdash; example of an Android project
 * [Gradle-test-retry](./kotest-gradle-retry) &mdash; example of a project using the [Gradle test retry](https://github.com/gradle/test-retry-gradle-plugin) plugin.
-* [Maven](./kotest-maven) &mdash; example of a project Apache Maven with Kotest rather than Gradle.
+* [Maven](./kotest-maven) &mdash; example of a project using Apache Maven with Kotest rather than Gradle.
+* [Amper](./kotest-amper) &mdash; example of a project using Amper with Kotest rather than Gradle.
 
 ## Overriding Kotest Version
 
