@@ -35,6 +35,7 @@ jobs:
           - kotest-spring-data
           - kotest-spring-webflux
           - kotest-wasm
+          - kotest-multi-module
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the repo
