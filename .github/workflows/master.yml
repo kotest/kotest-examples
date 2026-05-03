@@ -13,19 +13,20 @@ on:
 
 # This will prevent multiple parallel runs and will cancel queued runs except the latest one.
 concurrency:
-   group: 'master-ci'
-   cancel-in-progress: false
+  group: 'master-ci'
+  cancel-in-progress: false
 
 permissions:
-   contents: read
+  contents: read
 jobs:
   linux:
     strategy:
       fail-fast: false
       matrix:
-        project: 
+        project:
           - kotest-allure
           - kotest-android
+          - kotest-amper
           - kotest-gradle-retry
           - kotest-javascript
           - kotest-jvm
@@ -35,6 +36,12 @@ jobs:
           - kotest-spring-data
           - kotest-spring-webflux
           - kotest-wasm
+        include:
+          - command: ./gradlew check
+          - command: mvn -B test #override to use maven for the maven example
+            project: kotest-maven
+          - command: amper test #override to use amper for the amper example
+            project: kotest-amper
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the repo
@@ -49,14 +56,8 @@ jobs:
           java-version-file: .github/.java-version
 
       - name: Run tests
-        if: matrix.project != 'kotest-maven' # the maven example doesn't use gradle of course
         working-directory: ./${{ matrix.project }}
-        run: ./gradlew check
-
-      - name: Run tests
-        if: matrix.project == 'kotest-maven' # the maven example doesn't use gradle of course
-        working-directory: ./${{ matrix.project }}
-        run: mvn -B test
+        run: ${{ matrix.command }}
 
       - name: Bundle the build report
         if: failure()
@@ -74,7 +75,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        project:       
+        project:
           - kotest-multiplatform
           - kotest-native
     steps:
@@ -86,8 +87,8 @@ jobs:
       - name: Setup JDK
         uses: actions/setup-java@v5
         with:
-           distribution: 'temurin'
-           java-version-file: .github/.java-version
+          distribution: 'temurin'
+          java-version-file: .github/.java-version
 
       - name: Run tests
         working-directory: ./${{ matrix.project }}
@@ -121,8 +122,8 @@ jobs:
       - name: Setup JDK
         uses: actions/setup-java@v5
         with:
-           distribution: 'temurin'
-           java-version-file: .github/.java-version
+          distribution: 'temurin'
+          java-version-file: .github/.java-version
 
       - name: Run tests
         working-directory: ./${{ matrix.project }}
