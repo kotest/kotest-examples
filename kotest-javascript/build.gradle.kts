@@ -48,7 +48,12 @@ kotlin {
             implementation(npm("slugify", "1.6.6"))
 
             // needed as a workaround for https://youtrack.jetbrains.com/issue/KT-57235
-            implementation("org.jetbrains.kotlin:kotlinx-atomicfu-runtime:2.2.10")
+            implementation("org.jetbrains.kotlin:kotlinx-atomicfu-runtime:2.3.20")
+         }
+      }
+      jsTest {
+         dependencies {
+            implementation(kotlin("test-js"))
          }
       }
       wasmJsMain {
