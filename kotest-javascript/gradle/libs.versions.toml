@@ -3,7 +3,7 @@ kotlin = "2.3.20"
 kotest = "6.1.11"
 kotest-plugin = "6.1.11"
 ktor = "3.4.2"
-ksp = "2.3.6"
+ksp = "2.3.9"
 
 [libraries]
 kotest-assertions-core = { module = "io.kotest:kotest-assertions-core", version.ref = "kotest" }
