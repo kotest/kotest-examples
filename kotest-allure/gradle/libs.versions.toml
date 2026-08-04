@@ -1,6 +1,6 @@
 [versions]
 kotlin = "2.3.20"
-kotest = "6.1.7"
+kotest = "6.2.3"
 allure-plugin = "3.1.0"
 allure-report = "2.29.1"
 
