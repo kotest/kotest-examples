@@ -1,8 +1,8 @@
 [versions]
 agp = "8.13.2"
 kotlin = "2.2.21"
-kotest = "6.1.7"
-kotest-plugin = "6.1.11"
+kotest = "6.2.3"
+kotest-plugin = "6.2.3"
 ksp = "2.3.10"
 android-compileSdk = "36"
 android-minSdk = "24"
