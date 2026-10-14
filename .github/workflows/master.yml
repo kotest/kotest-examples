@@ -37,6 +37,7 @@ jobs:
           - kotest-spring-webflux
           - kotest-wasm
           - kotest-multi-module
+          - kotest-composite-build
         include:
           - command: ./gradlew check
           - command: mvn -B test #override to use maven for the maven example
