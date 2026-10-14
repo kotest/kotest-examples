@@ -15,6 +15,6 @@ tasks.withType<Test>().configureEach {
     useJUnitPlatform()
     environment("SERVICE_A_ENV", "from-test-task")
     workingDir = rootDir.parentFile
+    // false when service-a is built on its own rather than as part of the composite
+    systemProperty("composite", gradle.parent != null)
 }
-
-kotest { customGradleTask = true }

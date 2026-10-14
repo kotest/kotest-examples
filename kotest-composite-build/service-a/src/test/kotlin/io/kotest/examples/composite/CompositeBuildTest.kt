@@ -6,6 +6,10 @@ import java.io.File
 
 class CompositeBuildTest : FunSpec({
 
+   test("runs as part of the composite build") {
+      System.getProperty("composite") shouldBe "true"
+   }
+
    test("env var configured on the Test task is visible") {
       System.getenv("SERVICE_A_ENV") shouldBe "from-test-task"
    }
