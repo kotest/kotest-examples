@@ -1,6 +1,6 @@
 [versions]
 kotest = "6.2.3"
-kotest-plugin = "6.2.3"
+kotest-plugin = "6.2.6"
 kotlin = "2.2.21"
 
 [libraries]
