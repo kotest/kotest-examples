@@ -26,7 +26,7 @@ jobs:
         project:
           - kotest-allure
           - kotest-android
-          - kotest-amper
+          - kotest-kotlin-toolchain
           - kotest-gradle-retry
           - kotest-javascript
           - kotest-jvm
@@ -42,8 +42,8 @@ jobs:
           - command: ./gradlew check
           - command: mvn -B test #override to use maven for the maven example
             project: kotest-maven
-          - command: ./amper test #override to use the amper wrapper for the amper example
-            project: kotest-amper
+          - command: ./kotlin test #override to use the Kotlin Toolchain wrapper for the kotlin-toolchain example
+            project: kotest-kotlin-toolchain
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the repo

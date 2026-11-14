@@ -15,7 +15,7 @@ This repo contains multiple examples of how to use Kotest.
 * [Android](./kotest-android) &mdash; example of an Android project
 * [Gradle-test-retry](./kotest-gradle-retry) &mdash; example of a project using the [Gradle test retry](https://github.com/gradle/test-retry-gradle-plugin) plugin.
 * [Maven](./kotest-maven) &mdash; example of a project using Apache Maven with Kotest rather than Gradle.
-* [Amper](./kotest-amper) &mdash; example of a project using Amper with Kotest rather than Gradle.
+* [Kotlin Toolchain](./kotest-kotlin-toolchain) &mdash; example of a project using the Kotlin Toolchain (formerly Amper) with Kotest rather than Gradle.
 * [Multi-module](./kotest-multi-module) &mdash; example of a Gradle multi-project build (`include`).
 * [Composite build](./kotest-composite-build) &mdash; example of a Gradle composite build (`includeBuild`) with the wrapper and version catalog only at the root.
 

@@ -10,7 +10,7 @@
 .idea
 .fleet
 
-# Amper build output
+# Kotlin Toolchain build output
 build/
 
 # OS / misc
